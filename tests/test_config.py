@@ -7,7 +7,7 @@ class NotinRange(Exception):
         
 
 def test_genric():
-    a=2
+    a=21
     with pytest.raises(NotinRange):
         if a not in range(1,20):
             raise NotinRange
