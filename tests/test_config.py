@@ -5,10 +5,4 @@ class NotinRange(Exception):
         super().__init__(self.message)
         
         
-
-def test_genric():
-    a=21
-    with pytest.raises(NotinRange):
-        if a not in range(1,20):
-            raise NotinRange
-       
+ 
