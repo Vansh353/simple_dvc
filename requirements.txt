@@ -4,6 +4,7 @@
 
 #third party
 dvc
+mlflow
 dvc[gdrive]
 scikit-learn
 pandas
