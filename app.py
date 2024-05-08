@@ -19,16 +19,19 @@ def index():
     if request.method == "POST":
         try:
             if request.form:
-                data_req=dict(request.form)
-                response = prediction.form_response(data_req)
+                dict_req = dict(request.form)
+                response = prediction.form_response(dict_req)
                 return render_template("index.html", response=response)
             elif request.json:
-                response=prediction.api_response(request)
+                response = prediction.api_response(request.json)
                 return jsonify(response)
 
         except Exception as e:
             print(e)
-            return render_template("404.html", error=e)
+            error = {"error": "Something went wrong!! Try again later!"}
+            error = {"error": e}
+
+            return render_template("404.html", error=error)
     else:
         return render_template("index.html")
 
